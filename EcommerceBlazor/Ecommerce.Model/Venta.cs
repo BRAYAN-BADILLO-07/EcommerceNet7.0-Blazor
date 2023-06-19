@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ecommerce.Model;
 
-public partial class Ventas
+public partial class Venta
 {
     public int IdVenta { get; set; }
 

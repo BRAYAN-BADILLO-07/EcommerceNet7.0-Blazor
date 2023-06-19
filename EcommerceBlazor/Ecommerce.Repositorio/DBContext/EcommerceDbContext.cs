@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Ecommerce.Model;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecommerce.Model;
+namespace Ecommerce.Repositorio.DBContext;
 
 public partial class EcommerceDbContext : DbContext
 {
@@ -10,7 +9,7 @@ public partial class EcommerceDbContext : DbContext
     {
     }
 
-    public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options)
+    public EcommerceDbContext( DbContextOptions<EcommerceDbContext> options )
         : base(options)
     {
     }
@@ -23,13 +22,13 @@ public partial class EcommerceDbContext : DbContext
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
 
-    public virtual DbSet<Ventas> Venta { get; set; }
+    public virtual DbSet<Venta> Venta { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=(local); Database=EcommerceDB; Trusted_Connection=True; TrustServerCertificate=True;");
+    protected override void OnConfiguring( DbContextOptionsBuilder optionsBuilder )
+    { }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+    protected override void OnModelCreating( ModelBuilder modelBuilder )
     {
         modelBuilder.Entity<Categoria>(entity =>
         {
@@ -105,7 +104,7 @@ public partial class EcommerceDbContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<Ventas>(entity =>
+        modelBuilder.Entity<Venta>(entity =>
         {
             entity.HasKey(e => e.IdVenta).HasName("PK__Venta__BC1240BD251843A4");
 
@@ -122,5 +121,5 @@ public partial class EcommerceDbContext : DbContext
         OnModelCreatingPartial(modelBuilder);
     }
 
-    partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+    partial void OnModelCreatingPartial( ModelBuilder modelBuilder );
 }
