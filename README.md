@@ -1,2 +1,11 @@
 # EcommerceNet7.0-Blazor
-Realizamos un sistema Ecommerce Sencillo con funciones de (Crear, eliminar, modificar, login, carrito de compras) usando Arquitectura en Capas y Blazor para el front
+Realizamos un sistema Ecommerce Sencillo con funciones de:
+ - ***Crear***
+ - ***Eliminar***
+ - ***Modificar***
+ - ***Login***
+ - ***Carrito de compras***
+ - ***etc..***
+
+### Usamos para el backend Arquitectura en Capas con el marco de trabajo .NET7 
+### Para el Fronted estaremos probando las tecnologias de Blazor 
